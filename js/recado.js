@@ -1,82 +1,95 @@
-function checkLogged() {
-  if (!logged) {
-    window.location.href "./recado.html"
-    return;
-  }
+const logado = JSON(localStorage.getItem("logado") ||
+"[]");
 
-  const dataUser = localStorage.getItem(logged);
-  if (dataUser) {
-    user = JSON.parse(dataUser);
-  }
+let mudar = false;
+let edicao = 0;
+const form = document.querySelector("#formrec");
+const corpoRecados = document.querySelector("#tbody")
+const recuperarLocalStorage = () => {
+    const recados = JSON.parse(localStorage.getItem(logado.user) || "[]");
+    return recados;
+};
+
+const salvarrecado = (event) => {
+    event.preventDefault();
+    const oque = form.oque.value;
+    const como = form.como.value;
+    const recados = recuperarLocalStorage();
+    if (mudar === true){
+        alert("editando");
+        recados[edicao].oque = oque;
+        recados[edicao].como = como;
+        mudar = false;
+    }else{
+        recados.push({
+            id: definirID(),
+            oque,
+            como,
+        });
+
+        alert("adicionado")
+    }
+    localStorage.setItem(logado.user, JSON.stringify(recados));
+    form.oque.value = "";
+    form.como.value = "";
+    completatabela();
+};
+
+const completatabela = () =>{
+    const recados = recuperarLocalStorage();
+    corpoRecados.innerHTML = "";
+    for (const recado of recados){
+        corpoRecados.innerHTML += `
+
+<tr>
+
+<td> ${recado.id}</td>
+<td> ${recado.oque}</td>
+<td> ${recado.como}</td>
+<td>
+<img src="./lixo.svg" alt="lixeira" class="imgs" onclick="apagarRecado(${recado.id})" />
+<img src="./muda.svg" alt="lixeira" class="imgs" onclick="editarRecado(${recado.id})"/>
+</td>
+</tr>
+`;
 }
+};
 
-function MostrarMensagem() {
-  let HTMLmessages = "";
-  const messages = user.recados;
-  if (messages.length) {
-    messages.forEach((message, index) => {
-      HTMLmessages += `
-        <tr class="line">
-          <td class="descreve">${message.descreve}</td>
-          <td class="detalhe">${message.detalhe}</td>
-          <td class="acao">
+const apagar = (id) +>{
+    const recados = recuperarLocalStorage();
 
-        //     <button class="edit" onClick="editMessage(${index})">
-        //     editar
-        //     </button>
-            
-        //     <button class="apaga" onClick="deleteMessage(${index})">
-        //     apagar
-        //     </button>
-        //   </td>
-        </tr>
-      `;
+    const indice = recados.findIndex((rec) =>{
+        return recuperarLocalStorage.id === id;
     });
-  }
-  document.getElementById("tbody").innerHTML = HTMLmessages;
-}
 
-function recadosalvo() {
-  const formMessage = document.getElementById("form");
-  const description = formMessage.message.value;
-  const details = formMessage.details.value;
+    recados.splice(indice,1);
+    localStorage.setItem(logado.user, JSON.stringify(recados));
+    completatabela();
+};
 
-  if (!details || !description) {
-    alert("campo vazio");
-    return;
-  }
+const editarRecado = (id) =>{
+    const recados = recuperarLocalStorage();
+    const indice = recados.findIndex((rec) => rec.id === id);
+    const recado = recados[indice];
+    form.oque.value = recado.oque;
+    form.como.value = recado.como;
+    mudar= true;
+    edicao = indice;
+};
 
-  const message = {
-    description,
-    details,
-  };
+const definirID = () =>{
+    let max = 0;
+    const recados = recuperarLocalStorage();
+    recados.forEach((recado) =>{
+        if (recado.id > max) max = recado.id;
+    });
+    return max + 1;    
+    });
 
-  if (isEdit) {
-    user.recados[IdEdit] = message;
-    isEdit = false;
-    IdEdit = null;
-  } else {
-    user.recados.push(message);
-  }
+    if (localStorage.getItem("logado") == null) {
+        alert("faça o login");
+        document.location.href = "./login.html";
+    }
 
-  localStorage.setItem(user.username, JSON.stringify(user));
-  MostrarMensagem();
-  formMessage.reset();
-}
-
-function deleteMessage(index) {
-  user.recados.splice(index, 1);
-  localStorage.setItem(user.username, JSON.stringify(user));
-  MostrarMensagem();
-}
-
-function editMessage(index) {
-  const formMessage = document.getElementById("form");
-  formMessage.message.value = user.recados[index].description;
-  formMessage.details.value = user.recados[index].details;
-  isEdit = true;
-  IdEdit = index;
-}
-
-checkLogged();
-MostrarMensagem();
+    form.addEventListener("submit", salvarrecado );
+document.addEventListener("DOMContentLoaded", completatabela);

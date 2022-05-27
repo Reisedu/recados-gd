@@ -1,61 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>recado</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <main class="vidro">
-      <h1>recados</h1>
-      <form id="form">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>recados</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <button>
+      <a href="login.html">sair</a>
+    </button>
+    
+  </header>
+  <main class="vidro">
+    <h1>recados</h1>
+    <form id="formrec">
         <input
-          id="oque"
-          type="text"
-          name="message"
-          placeholder="o que?"
-        />
+        type="text"
+        id="oque"
+        name="oque"
+        placeholder="o que?"
+        required
+      />
+      <input
+      type="text"
+      id="como"
+      name="como"
+      placeholder="como?"
+      required
+      />
 
-        <input
-          id="como"
-          type="text"
-          name="details"
-          placeholder="como?"
-        />
-        <button
-          type="submit"
-          id="btn-salvar"
-          value="Salvar"
-          onclick="recadosalvo()"
-        >
-          Salvar
-        </button>
-      </form>
+      <input
+      type="submit"
+      id="salvar"
+      value="cadastrar"
+      />
+    </form>
 
-      <table id="tabela">
-        <thead class="table-head">
-          <th class="descreve">o que?</th>
-          <th class="detalhe">como</th>
-          <th colspan="2" class="acao">Ação</th>
-          <!-- <tr class="edit"> 
-            <button>editar</button>
-          </tr>
-          <tr class="apaga">
-            <button>apagar</button>
-          </tr> -->
-        </thead>
-        <tbody id="tbody"></tbody>
-      </table>
-      
-      <footer>
-        <button type="button">
-            <a href="./login.html">sair</a>
-        </button> 
-      </footer>
-
-    </main>
-    <script src="./js/recado.js"></script>
-  </body>
+    <table id="tabela">
+      <thead class="thead">
+        <tr>
+          <th id="idtabela" >id</th>
+          <th id="oquetabela"> o que?</th>
+          <th id="comotabela">como?</th>
+          <th id="acaotabela">ação</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </main>
+  <script src="./js/recado.js"></script>
+</body>
 </html>

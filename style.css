@@ -1,3 +1,4 @@
+/* geral */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +7,6 @@
   
   body {
   background-color: #bbffbe;
-    
   }
   
   .container {
@@ -15,7 +15,7 @@
     width: 100%;
     margin-top: 100px;
   }
-  
+  /* numero apos letras do codigo da cor é a opacidade */
   .card {
     background-color: #ffffff80;
     padding: 30px;
@@ -58,7 +58,7 @@
   
   .label-float label{
     color: #0d009c;
-    pointer-event: none;
+    pointer-events: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -84,9 +84,10 @@
     border-radius: 4px;
     cursor: pointer;
     outline: none;
+    /* ação */
     transition: all .4s ease-out;
   }
-  
+  /* passa mouse */
   button:hover{
     background-color: #0d009c;
     color: #fff;
@@ -116,22 +117,20 @@
   }
 
   table {
-    margin-top: 24px;
+    margin-top: 25px;
     width: 100%;
     border-collapse: collapse;
   }
   
   .table-thead {
     border-collapse: collapse;
-    background: #39e03e;
   }
 
  #tabela{
     border: solid;
     color: #0d009c;
-    border-radius: 20px;
  }
-
+ /* transparente */
   .vidro{
     background: rgba( 255, 255, 255, 0.35 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -141,3 +140,37 @@
     border: 1px solid rgba( 255, 255, 255, 0.18 );
   }
   
+  #form{
+    width: 450px;
+    border: #0d009c;
+    border-style: dashed;
+    padding: 15px; 
+  }
+
+  #btnsalva{
+    font-weight: bolder;
+    height: 35px;
+    text-align: center;
+    background-color: aquamarine;
+    border-style: solid;
+    border-radius: 11px;
+  }
+
+  .botaoapagar{
+    font-weight: lighter;
+    padding: 3px;
+    margin-left: 3px;
+  }
+
+  .botaoeditar{
+    font-weight: lighter;
+    padding: 3px;
+    margin-left: 3px;
+  }
+
+  .acaobotao{
+    padding: 5px;
+  }
+
+
+

@@ -10,11 +10,11 @@ let validSenha = false
 let confirmSenha = document.querySelector('#confirmSenha')
 let labelConfirmSenha = document.querySelector('#labelConfirmSenha')
 let validConfirmSenha = false
-
+// para aparecer o que ta rolando
 let msgError = document.querySelector('#msgError')
 let msgSuccess = document.querySelector('#msgSuccess')
 
-
+// keyup é enquanto tiver "clicado/digitando/selecionado"
 usuario.addEventListener('keyup', () => {
   if(usuario.value.length <= 2){
     labelUsuario.setAttribute('style', 'color: red')
