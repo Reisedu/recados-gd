@@ -1,0 +1,160 @@
+button{
+  font-weight: bolder;
+  background-color: aquamarine;
+  color: black;
+  border: 3pxcm;
+  border-color: aqua;
+  border-radius: 30px;
+  padding: 5px;
+  margin: 5px;
+  height: 40px;
+  width: 130px;
+}
+
+#inputCadastrar{
+  font-weight: bolder;
+  background-color: aquamarine;
+  color: black;
+  border: 3pxcm;
+  border-color: aqua;
+  border-radius: 30px;
+  padding: 5px;
+  margin: 5px;
+  height: 40px;
+  width: 130px;
+}
+
+.btnsair{
+  font-weight: lighter;
+  background-color: rgb(155, 96, 23);
+  border: none;
+  border-radius: 50px;
+  padding: 5px;
+  margin: 5px;
+  height: 50px;
+  width: 50px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.um{
+  background-color: aqua;
+}
+
+.dois{
+  background-color: #00bb00;
+}
+
+.tres{
+  background-color: beige;
+}
+
+#form{
+  background: rgba( 255, 255, 255, 0.35 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 13.5px );
+  -webkit-backdrop-filter: blur( 13.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.imgacao {
+  width: 25px;
+}
+
+#msgError {
+  text-align: start center;
+  flex-direction: column;
+  color: #ff0000;
+  background-color: #ffbbbb;
+  padding: 10px;
+  border-radius: 4px;
+  display: none;
+}
+#msgSuccess {
+  text-align: start center;
+  color: #00bb00;
+  background-color: #bbffbe;
+  padding: 10px;
+  border-radius: 4px;
+  display: none;
+}
+
+table {
+  padding: 30px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+table th {
+  color: white;
+  background-color: aqua;
+}
+
+tbody th {
+  
+}
+
+#th1 {
+  width: 8%;
+}
+
+#th2 {
+  width: 20%;
+}
+#th4 {
+  width: 15%;
+}
+
+
+.inputs {
+  display: flex;
+  border-radius: 40px;
+  width: 100%;
+  height: 30px;
+  padding: 15px;
+  border: none;
+  margin-bottom: 10px;
+}
+
+
+label {
+  display: flex;
+  flex: column;
+  font-size: 12px;
+  text-align: left;
+  align-items: left;
+  margin-left: 0;
+  align-items: left;
+  margin-left: 12px;
+  margin-top: 12px;
+  color: #705a5a;
+}
+
+
+
+.divMeusRecados {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px;
+}
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./estilo/estilo.css" />
+    <title>Criar</title>
+  </head>
+  <body class="dois">
+    <main>
+      <section>
+          <h1>Criar</h1>
+          <div id="msgError"></div>
+          <div id="msgSuccess"></div>
+
+          <form id="formcad">
+            <label id="labelemaillogin" for="emaillogin">Email</label>
+            <br>
+            <input
+              id="emaillogin"
+              name="emaillogin"
+              class="inputs"
+              type="text"
+              value=""
+              placeholder=" email"
+            />
+            <br>
+            <label id="labelsenhalogin" for="senhalogin">Senha</label>
+            <br>
+            <input
+              id="senhalogin"
+              name="senhalogin"
+              class="inputs"
+              type="password"
+              value="senha"
+            />
+            <br>
+            <label id="labelconfirmasenha" for="confirmasenha">Confirmar senha</label>
+            <br>
+            <input
+              id="confirmasenha"
+              name="confirmasenha"
+              class="inputs"
+              type="password"
+              value="repete senha"
+            />
+            <br>
+            <button id="salvar">Criar conta</button>
+            <button>
+              <a href="./index.html">Página inicial</a>
+            </button>
+          </form>
+        </fieldset>
+      </section>
+    </main>
+    <script src="./js/criarConta.js"></script>
+  </body>
+</html>
